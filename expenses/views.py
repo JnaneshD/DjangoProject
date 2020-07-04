@@ -7,7 +7,7 @@ from django.core.paginator import Paginator
 import json
 from userpreferences.models import UserPrefence
 from django.http import JsonResponse
-
+import datetime
 def search_expenses(request):
     if request.method=="POST":
         search_str = json.loads(request.body).get('searchText')
@@ -89,3 +89,6 @@ def delete_expense(request,id):
     expense.delete()
     messages.success(request,'Expense removed')
     return redirect('expenses')        
+
+def expense_category_summary(request):
+    todays_date = datetime.date.today()
