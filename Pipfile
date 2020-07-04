@@ -10,6 +10,9 @@ django = "*"
 psycopg2 = "*"
 django-heroku = "*"
 gunicorn = "*"
+validate-email = "*"
+py3-validate-email = "*"
+six = "*"
 
 [requires]
 python_version = "3.8"

@@ -1,0 +1,28 @@
+#header {
+    background: rgb(0, 62, 69);
+    color: #ffffff;
+    overflow: hidden;
+}
+
+#branding h1 {
+    color: white;
+}
+
+div.breadcrumbs {
+    background: rgb(61, 88, 106);
+    padding: 10px 40px;
+    border: none;
+    font-size: 14px;
+    color: #fff;
+    text-align: left;
+}
+
+.login .submit-row {
+    padding: 0%;
+}
+
+.button .module h2,
+.module caption,
+.inline-group h2 {
+    background: rgb(0, 62, 69);
+}

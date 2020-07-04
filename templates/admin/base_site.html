@@ -1,0 +1,14 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+{% block branding %}
+<h1 id="head">
+<img src="{% static 'img/icon.svg' %}" style="width:100px">
+IncomeExpenseApp
+</h1>
+
+{% endblock branding %}
+{% block extrastyle %}
+<link rel="stylesheet" href="{% static 'css/adminstyle.css' %}"/>
+
+{% endblock extrastyle %}

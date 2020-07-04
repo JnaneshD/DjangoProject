@@ -1,13 +1,45 @@
 {% extends 'base_auth.html' %}
-
+{% load static %}
 
 {% block content %}
+<style>
+.showPasswordToggle {
+    cursor: pointer;
+}
 
-<div class="card">
-    <div class="card-body">
-        <h1>Login</h1>
+.showPasswordToggle:hover {
+    transform: scale(1.2);
+}
+
+</style>
+<div class="row"> 
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <div class="card mt-5">
+            
+            <div class="card-body">
+            <div class="card-title py-3">
+                <h4>Login to your account</h4>
+            </div>
+
+
+                <form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                {% include 'partials/_messages.html' %}
+                <div class="form-group"><input type="text" id="usernameField" name="username" class="form-control form-control-sm" placeholder="Username" value="{{fieldValues.username}}"></div>
+                <div class="form-group"><input type="password" id="passwordField" name="password" class="form-control form-control-sm" placeholder="Password"></div>
+                <input type="submit" value="Login" class="btn btn-block btn-primary submit-btn">
+                </form>
+            <div class="container">
+                <span class="text-lead lead">Don't have an account?<a href="{% url 'register' %}">Register</a></span><br/>
+                <span class="text-lead lead">Forgot password?<a href="{% url 'request-password' %}">Reset</a></span>
+            </div>
+            </div>
+            </div>
+        </div>
     </div>
+    <div class="col-md-4"></div>
 </div>
-
+<script src="{% static 'js/register.js' %}">
 {% endblock content %}
 
